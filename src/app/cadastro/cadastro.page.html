@@ -27,10 +27,14 @@
     <ion-item>
       <ion-label>Descrição: </ion-label>
       <ion-input [(ngModel)]="descricao"></ion-input>
+      
     </ion-item>
     <ion-item>
-      <ion-label>Data e Hora: </ion-label>
-      <ion-input [(ngModel)]="datahora"></ion-input>
+      
+      <ion-datetime
+      locate="pt-BR"
+      [showDefaultButtons]="true"[(ngModel)]="datahora"></ion-datetime>
+      
     </ion-item>
   </ion-list>
 
