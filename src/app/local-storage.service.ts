@@ -16,7 +16,8 @@ export class LocalStorageService {
   }
 
   get(entidade:string){
-    return JSON.parse(String(localStorage.getItem(entidade)));
+    let _dados = JSON.parse(String(localStorage.getItem(entidade)));
+    return (_dados == null) ? [] : _dados;
   }
 
   del(entidade:string, indice:number){

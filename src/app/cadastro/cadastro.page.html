@@ -1,14 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button default-href="#"></ion-back-button>
-  </ion-buttons>
-  <ion-title>Voltar</ion-title>
-  </ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Voltar</ion-title>
+    </ion-toolbar>
 
     <ion-title>Agendar</ion-title>
-  
   </ion-toolbar>
 </ion-header>
 
@@ -18,23 +17,25 @@
       <ion-title size="large">cadastro</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-list lines="full">
-    <ion-item>
+    <ion-item #obrigatorio>
       <ion-label>Matéria: </ion-label>
-      <ion-input [(ngModel)]="materia"></ion-input>
+      <ion-input 
+      [(ngModel)]="materia" required
+      ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Descrição: </ion-label>
       <ion-input [(ngModel)]="descricao"></ion-input>
-      
     </ion-item>
     <ion-item>
-      
       <ion-datetime
-      locate="pt-BR"
-      [showDefaultButtons]="true"[(ngModel)]="datahora"></ion-datetime>
-      
+        #calendario
+        locate="pt-BR"
+        [showDefaultButtons]="false"
+        [(ngModel)]="datahora"
+      ></ion-datetime>
     </ion-item>
   </ion-list>
 
